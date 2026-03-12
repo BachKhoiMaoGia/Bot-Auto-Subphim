@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bot Auto Subphim - Clean Timecode SRT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <h1>Bot Auto Subphim</h1>
+      <p class="subtitle">Clean timecode SRT theo cong thuc V2.0, xu ly hang loat, tai ve ngay.</p>
+    </section>
+
+    <section class="panel">
+      <div id="dropZone" class="drop-zone" role="button" tabindex="0" aria-label="Vung keo tha file SRT">
+        <p><strong>Keo & tha</strong> file <code>.srt</code> vao day (toi da 30 file).</p>
+        <p class="hint">Hoac bam de chon file tu may.</p>
+        <input id="fileInput" type="file" accept=".srt" multiple hidden />
+      </div>
+
+      <div class="actions">
+        <button id="processBtn" type="button" disabled>Xu ly Timecode</button>
+        <button id="downloadAllBtn" type="button" disabled>Tai tat ca</button>
+        <button id="clearBtn" type="button">Xoa danh sach</button>
+      </div>
+
+      <p class="formula-note">
+        Cong thuc: Start -100ms, End +300ms; xu ly xung dot theo 3 case A/B/C de tranh chong cheo.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Ket qua xu ly</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Ten file</th>
+              <th>Trang thai</th>
+              <th>So block</th>
+              <th>Case A</th>
+              <th>Case B</th>
+              <th>Tai ve</th>
+            </tr>
+          </thead>
+          <tbody id="resultBody">
+            <tr>
+              <td colspan="6" class="empty">Chua co file nao.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
